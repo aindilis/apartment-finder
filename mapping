@@ -1,0 +1,5 @@
+$mapping = {
+	"2216 N.ST.LOUIS at PALMER" => "ST.LOUIS at PALMER",
+	"3023 W. Addison at sacramento" => "Addison at sacramento",
+
+};	

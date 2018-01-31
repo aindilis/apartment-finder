@@ -1,0 +1,19 @@
+#!/usr/bin/perl -w
+
+use AppFinder;
+
+use UniLang::Agent::Agent;
+use UniLang::Util::Message;
+
+$UNIVERSAL::agent = UniLang::Agent::Agent->new
+  (Name => "AppFinder",
+   ReceiveHandler => \&Receive);
+$UNIVERSAL::appfinder = AppFinder->new();
+
+sub Receive {
+  my %args = @_;
+  $UNIVERSAL::appfinder->ProcessMessage
+    (Message => $args{Message});
+}
+
+$UNIVERSAL::appfinder->Execute();
